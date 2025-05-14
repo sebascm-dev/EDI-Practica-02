@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1747242367 source:c:\users\spano\desktop\proyectos\edi-practica-02\main.cpp
+	<iostream>
+	"Common.h"
+	"Servidor.h"
+
+1747242369 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\tadcola.cpp
+	"TadCola.h"
+
+1747242370 c:\users\spano\desktop\proyectos\edi-practica-02\include\tadcola.h
+	<iostream>
+	"Common.h"
+
+1747242369 c:\users\spano\desktop\proyectos\edi-practica-02\include\common.h
+
+1747242369 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\servidor.cpp
+	"Servidor.h"
+	"Common.h"
+
+1747242369 c:\users\spano\desktop\proyectos\edi-practica-02\include\servidor.h
+	<cstring>
+	"Common.h"
+	"TADLista.h"
+	"TADCola.h"
+
+1747242370 c:\users\spano\desktop\proyectos\edi-practica-02\include\tadlista.h
+	<iostream>
+	"Common.h"
+
+1747242369 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\tadlista.cpp
+	"TADLista.h"
+	<cstring>
+
+1747215558 source:c:\users\spano\downloads\p2_servidoresjuegosjugadores-20250514t134433z-1-001\p2_servidoresjuegosjugadores\src\tadcola.cpp
+	"TadCola.h"
+
+1747215558 c:\users\spano\downloads\p2_servidoresjuegosjugadores-20250514t134433z-1-001\p2_servidoresjuegosjugadores\include\tadcola.h
+	<iostream>
+	"Common.h"
+
+1747214691 c:\users\spano\downloads\p2_servidoresjuegosjugadores-20250514t134433z-1-001\p2_servidoresjuegosjugadores\include\common.h
+
+1747215920 source:c:\users\spano\downloads\p2_servidoresjuegosjugadores-20250514t134433z-1-001\p2_servidoresjuegosjugadores\src\tadlista.cpp
+	"TADLista.h"
+	<cstring>
+
+1747215558 c:\users\spano\downloads\p2_servidoresjuegosjugadores-20250514t134433z-1-001\p2_servidoresjuegosjugadores\include\tadlista.h
+	<iostream>
+	"Common.h"
+
+1747242164 source:c:\users\spano\downloads\p2_servidoresjuegosjugadores-20250514t134433z-1-001\p2_servidoresjuegosjugadores\src\servidor.cpp
+	"Servidor.h"
+	"Common.h"
+
+1747231964 c:\users\spano\downloads\p2_servidoresjuegosjugadores-20250514t134433z-1-001\p2_servidoresjuegosjugadores\include\servidor.h
+	<cstring>
+	"Common.h"
+	"TADLista.h"
+	"TADCola.h"
+
+1747242028 source:c:\users\spano\downloads\p2_servidoresjuegosjugadores-20250514t134433z-1-001\p2_servidoresjuegosjugadores\main.cpp
+	<iostream>
+	"Common.h"
+	"Servidor.h"
+
