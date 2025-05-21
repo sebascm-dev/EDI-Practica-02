@@ -35,10 +35,12 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Common.h" />
+		<Unit filename="include/GestorServidores.h" />
 		<Unit filename="include/Servidor.h" />
 		<Unit filename="include/TADCola.h" />
 		<Unit filename="include/TADLista.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/GestorServidores.cpp" />
 		<Unit filename="src/Servidor.cpp" />
 		<Unit filename="src/TADCola.cpp" />
 		<Unit filename="src/TADLista.cpp" />

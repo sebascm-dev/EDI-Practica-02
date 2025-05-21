@@ -81,7 +81,7 @@
 	<iostream>
 	"Common.h"
 
-1747839834 source:c:\users\spano\downloads\edi-practica-02\src\servidor.cpp
+1747840189 source:c:\users\spano\downloads\edi-practica-02\src\servidor.cpp
 	"Servidor.h"
 	"Common.h"
 
@@ -91,4 +91,16 @@
 1747838605 source:c:\users\spano\downloads\edi-practica-02\src\tadlista.cpp
 	"TADLista.h"
 	<cstring>
+
+1747844401 source:c:\users\spano\downloads\edi-practica-02\src\gestorservidores.cpp
+	"GestorServidores.h"
+	"Servidor.h"
+	"Common.h"
+
+1747842027 c:\users\spano\downloads\edi-practica-02\include\gestorservidores.h
+	<cstring>
+	"Common.h"
+	"TADLista.h"
+	"TADCola.h"
+	"Servidor.h"
 
