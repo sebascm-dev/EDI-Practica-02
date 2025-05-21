@@ -114,8 +114,10 @@ void Servidor::mostrarJugadoresEnEspera() {
         cout << "\t" << i << ". " << j.nombreJugador << " - Puntuacion: " << j.puntuacion;
 
         if(!j.activo) {
-            cout << "\t (DESACTIVADO)" << endl;
+            cout << "\t (DESACTIVADO)";
         }
+
+        cout << endl;
     }
 }
 
@@ -171,6 +173,16 @@ bool Servidor::ponerEnMantenimiento() {
 
 // Información general
 void Servidor::mostrarInformacion() {
+    // Obtencion de la latencia media de los jugadores conectados
+    float latenciaMedia = 0.0;
+    float sumaLatencia = 0.0;
+
+    for(int i = 0; i <= jugadoresConectados.longitud(); i++) {
+        sumaLatencia += jugadoresConectados.observar(i).latencia;
+    }
+
+    latenciaMedia = sumaLatencia / jugadoresConectados.longitud();
+    cout << endl;
     cout << "X===================================================" << endl;
     cout << "| INFORMACION DEL SERVIDOR: " << nombreJuego << " - " << direccionServidor << endl;
     cout << "X===================================================" << endl;
@@ -178,9 +190,10 @@ void Servidor::mostrarInformacion() {
     cout << "| Jugadores: " << jugadoresConectados.longitud() << "/" << maxJugadoresConectados << endl;
     cout << "| Jugadores Esperando: " << jugadoresEnEspera.longitud() << "/" << maxJugadoresEnEspera << endl;
     cout << "| Puerto: " << puerto << endl;
-    cout << "| Latencia Media: " << endl;
+    cout << "| Latencia Media: " << latenciaMedia << endl;
     cout << "| Localizacion Geografica: " << localizacionGeografica << endl;
     cout << "X===================================================" << endl;
+    cout << endl;
 }
 
 bool Servidor::expulsarJugador(cadena nombre) {
@@ -260,6 +273,28 @@ int Servidor::getNumJugadoresConectados() { return jugadoresConectados.longitud(
 
 int Servidor::getNumJugadoresEnEspera() { return jugadoresEnEspera.longitud(); }
 
-void Servidor::exportarJugadoresConectados(Jugador *conectados) {}
 
-void Servidor::exportarJugadoresEnEspera(Jugador *enEspera) {}
+
+// Metodos para exportar
+void Servidor::exportarJugadoresConectados(Jugador *conectados) {
+    // Obtenemos el numero de jugadores que hay realmente conectado
+    int nConectados = jugadoresConectados.longitud();
+
+    // Recorremos la lista interna y volcamos en el array
+    for(int i = 0; i < nConectados; i++) {
+        conectados[i] = jugadoresConectados.observar(i+1);
+    }
+}
+
+void Servidor::exportarJugadoresEnEspera(Jugador *enEspera) {
+    // Obtenemos el numero de jugadores que estan en la cola de espera
+    int nEsperando = jugadoresEnEspera.longitud();
+
+    // Recorremos la cola de espera y volcamos los jugadores en el array
+    for(int i = 0; i < nEsperando; i++) {
+        Jugador actual = jugadoresEnEspera.primero();
+        enEspera[i] = actual;
+        jugadoresEnEspera.desencolar();
+        jugadoresEnEspera.encolar(actual);
+    }
+}

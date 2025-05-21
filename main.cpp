@@ -103,5 +103,7 @@ int main()
     cout << endl;
     server1.activar();
 
+    server1.mostrarInformacion();
+
     return 0;
 }

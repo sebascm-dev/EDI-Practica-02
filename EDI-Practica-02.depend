@@ -60,3 +60,35 @@
 	"Common.h"
 	"Servidor.h"
 
+1747839871 source:c:\users\spano\downloads\edi-practica-02\main.cpp
+	<iostream>
+	"Common.h"
+	"Servidor.h"
+
+1747838605 c:\users\spano\downloads\edi-practica-02\include\common.h
+
+1747838605 c:\users\spano\downloads\edi-practica-02\include\servidor.h
+	<cstring>
+	"Common.h"
+	"TADLista.h"
+	"TADCola.h"
+
+1747838605 c:\users\spano\downloads\edi-practica-02\include\tadlista.h
+	<iostream>
+	"Common.h"
+
+1747838605 c:\users\spano\downloads\edi-practica-02\include\tadcola.h
+	<iostream>
+	"Common.h"
+
+1747839834 source:c:\users\spano\downloads\edi-practica-02\src\servidor.cpp
+	"Servidor.h"
+	"Common.h"
+
+1747838605 source:c:\users\spano\downloads\edi-practica-02\src\tadcola.cpp
+	"TadCola.h"
+
+1747838605 source:c:\users\spano\downloads\edi-practica-02\src\tadlista.cpp
+	"TADLista.h"
+	<cstring>
+
