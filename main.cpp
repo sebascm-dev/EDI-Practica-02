@@ -8,24 +8,7 @@ int main()
 {
     Servidor server1("192.168.18.1", "Minecraft", 1, 5, 4, 25565, "Espana");
 
-    cadena direccionServidor, nombreJuego, localizacionServidor;
-    int idServidor, puertoServidor, maxJugadoresConectados, maxJugadoresEspera;
-
-    server1.getDireccionServidor(direccionServidor);
-    server1.getLocalizacionGeografica(localizacionServidor);
-    server1.getNombreJuego(nombreJuego);
-    idServidor = server1.getId();
-    puertoServidor = server1.getPuerto();
-    maxJugadoresConectados = server1.getMaxJugadoresConectados();
-    maxJugadoresEspera = server1.getMaxJugadoresEnEspera();
-
-    cout << "=== Datos del Servidor " << direccionServidor << " | " << localizacionServidor << " ===" << endl;
-    cout << "ID: " << idServidor << endl;
-    cout << "JUEGO: " << nombreJuego << endl;
-    cout << "PUERTO: " << puertoServidor << endl;
-    cout << "MAX JUGADORES CONECTADO: " << maxJugadoresConectados << endl;
-    cout << "MAX JUGADORES EN ESPERA: " << maxJugadoresEspera << endl;
-    cout << "================================================" << endl;
+    server1.mostrarInformacion();
 
     Jugador j1, j2, j3, j4, j5, j6, j7, j8, j9, j10;
 
@@ -108,10 +91,17 @@ int main()
 
     server1.mostrarJugadoresConectados();
     server1.mostrarJugadoresEnEspera();
+    server1.expulsarJugador("Pepe");
+    server1.mostrarJugadoresConectados();
+    server1.mostrarJugadoresEnEspera();
+
 
     cout << endl;
     cout << "JUGADORES CONECTADOS: " << server1.getNumJugadoresConectados() << endl;
     cout << "JUGADORES EN COLA: " << server1.getNumJugadoresEnEspera() << endl;
+
+    cout << endl;
+    server1.activar();
 
     return 0;
 }

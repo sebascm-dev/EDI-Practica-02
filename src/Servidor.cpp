@@ -106,11 +106,10 @@ void Servidor::mostrarJugadoresEnEspera() {
         return;
     }
 
-    cola copiaJugadoresEnEspera = jugadoresEnEspera;
-
     for(int i = 1; i <= totalJugadoresEnEspera; i++){
-        Jugador j = copiaJugadoresEnEspera.primero();
-        copiaJugadoresEnEspera.desencolar();
+        Jugador j = jugadoresEnEspera.primero();
+        jugadoresEnEspera.desencolar();
+        jugadoresEnEspera.encolar(j);
 
         cout << "\t" << i << ". " << j.nombreJugador << " - Puntuacion: " << j.puntuacion;
 
@@ -123,20 +122,126 @@ void Servidor::mostrarJugadoresEnEspera() {
 
 
 // Estado del servidor
-bool Servidor::estaActivo() {}
+bool Servidor::estaActivo() {
+    if(strcmp(estado, "ACTIVO") == 0) {
+        cout << "[/] SERVIDOR: " << estado << endl;
+        return true;
+    } else {
+        cout << "[/] SERVIDOR: " << estado << endl;
+        return false;
+    }
+}
 
-bool Servidor::activar() {}
+bool Servidor::activar() {
+    if(!estaActivo()) {
+        cout << "[~] El servidor se esta ACTIVANDO..." << endl;
+        strcpy(estado, "ACTIVO");
+        cout << "[OK] El servidor esta: " << estado << endl;
+        return true;
+    } else {
+        cout << "[!] El servidor ya esta ACTIVO." << endl;
+        return false;
+    }
+}
 
-bool Servidor::desactivar() {}
+bool Servidor::desactivar() {
+    if(estaActivo()) {
+        cout << "[~] El servidor se esta DESACTIVANDO..." << endl;
+        strcpy(estado, "INACTIVO");
+        cout << "[OK] El servidor esta: " << estado << endl;
+        return true;
+    } else {
+        cout << "[!] El servidor ya esta INACTIVO." << endl;
+        return false;
+    }
+}
 
-bool Servidor::ponerEnMantenimiento() {}
+bool Servidor::ponerEnMantenimiento() {
+    if(strcmp(estado, "INACTIVO") == 0) {
+        cout << "[~] El servidor se esta poniendo en MANTENIMIENTO..." << endl;
+        strcpy(estado, "MANTENIMIENTO");
+        cout << "[OK] El servidor esta: " << estado << endl;
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
 
 // Información general
-void Servidor::mostrarInformacion() {}
+void Servidor::mostrarInformacion() {
+    cout << "X===================================================" << endl;
+    cout << "| INFORMACION DEL SERVIDOR: " << nombreJuego << " - " << direccionServidor << endl;
+    cout << "X===================================================" << endl;
+    cout << "| Estado: " << estado << endl;
+    cout << "| Jugadores: " << jugadoresConectados.longitud() << "/" << maxJugadoresConectados << endl;
+    cout << "| Jugadores Esperando: " << jugadoresEnEspera.longitud() << "/" << maxJugadoresEnEspera << endl;
+    cout << "| Puerto: " << puerto << endl;
+    cout << "| Latencia Media: " << endl;
+    cout << "| Localizacion Geografica: " << localizacionGeografica << endl;
+    cout << "X===================================================" << endl;
+}
 
-bool Servidor::expulsarJugador(cadena nombre) {}
+bool Servidor::expulsarJugador(cadena nombre) {
+    cout << endl << endl;
+
+
+    int posConectado = 1;
+    int sizeLista = jugadoresConectados.longitud();
+    int sizeCola = jugadoresEnEspera.longitud();
+    bool haExpulsado = false;
+
+
+    cout << "[i] Buscando jugador en la lista de conectados..." << endl;
+    while(posConectado <= sizeLista) {
+        Jugador actual = jugadoresConectados.observar(posConectado);
+
+        if(strcmp(actual.nombreJugador, nombre) == 0) {
+            jugadoresConectados.eliminar(posConectado);
+            cout << "[-] Jugador " << nombre << " expulsado." << endl;
+            haExpulsado = true;
+
+            cout << "[i] Comprobando si hay jugadores para unirse..." << endl;
+            if(!jugadoresEnEspera.esvacia()) {
+                Jugador siguiente = jugadoresEnEspera.primero();
+                jugadoresEnEspera.desencolar();
+                conectarJugador(siguiente);
+                cout << "[+] El jugador " << siguiente.nombreJugador << " se ha unido correctamente." << endl;
+            } else {
+                cout << "[!] No hay jugadores esperando para conectarse..." << endl;
+            }
+            return true;
+
+        } else {
+            ++posConectado;
+        }
+    }
+
+
+    cout << "[i] Buscando jugador en la cola de espera..." << endl;
+    for(int i = 0; i < sizeCola; i++) {
+        Jugador actual = jugadoresEnEspera.primero();
+        jugadoresEnEspera.desencolar();
+
+        if(strcmp(actual.nombreJugador, nombre) == 0) {
+            cout << "[-] Jugador " << nombre << " expulsado." << endl;
+            haExpulsado = true;
+
+        } else {
+            jugadoresEnEspera.encolar(actual);
+        }
+    }
+
+
+    if(haExpulsado) {
+        return true;
+
+    } else {
+        cout << "[!] Jugador " << nombre << " no ha sido encontrado." << endl;
+        return false;
+    }
+}
 
 
 
