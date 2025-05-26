@@ -1,30 +1,34 @@
 # depslib dependency file v1.0
-1584209020 source:c:\users\spano\desktop\proyectos\edi-practica-02\main.cpp
+1748104182 source:c:\users\spano\desktop\proyectos\edi-practica-02\main.cpp
 	<iostream>
+	"Common.h"
+	"Servidor.h"
+	"GestorServidores.h"
 
-1747215558 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\tadcola.cpp
+1747990994 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\tadcola.cpp
 	"TadCola.h"
 
-1747215558 c:\users\spano\desktop\proyectos\edi-practica-02\include\tadcola.h
+1747990994 c:\users\spano\desktop\proyectos\edi-practica-02\include\tadcola.h
 	<iostream>
 	"Common.h"
 
-1747214691 c:\users\spano\desktop\proyectos\edi-practica-02\include\common.h
+1747990994 c:\users\spano\desktop\proyectos\edi-practica-02\include\common.h
 
-1747214691 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\servidor.cpp
+1747990994 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\servidor.cpp
 	"Servidor.h"
 	"Common.h"
 
-1747215567 c:\users\spano\desktop\proyectos\edi-practica-02\include\servidor.h
+1747990994 c:\users\spano\desktop\proyectos\edi-practica-02\include\servidor.h
+	<cstring>
 	"Common.h"
 	"TADLista.h"
 	"TADCola.h"
 
-1747215558 c:\users\spano\desktop\proyectos\edi-practica-02\include\tadlista.h
+1747990994 c:\users\spano\desktop\proyectos\edi-practica-02\include\tadlista.h
 	<iostream>
 	"Common.h"
 
-1747215920 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\tadlista.cpp
+1747990994 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\tadlista.cpp
 	"TADLista.h"
 	<cstring>
 
@@ -98,6 +102,18 @@
 	"Common.h"
 
 1747842027 c:\users\spano\downloads\edi-practica-02\include\gestorservidores.h
+	<cstring>
+	"Common.h"
+	"TADLista.h"
+	"TADCola.h"
+	"Servidor.h"
+
+1748105001 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\gestorservidores.cpp
+	"GestorServidores.h"
+	"Servidor.h"
+	"Common.h"
+
+1748106626 c:\users\spano\desktop\proyectos\edi-practica-02\include\gestorservidores.h
 	<cstring>
 	"Common.h"
 	"TADLista.h"

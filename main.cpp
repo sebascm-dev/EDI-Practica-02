@@ -1,12 +1,13 @@
 #include <iostream>
 #include "Common.h"
 #include "Servidor.h"
+#include "GestorServidores.h"
 
 using namespace std;
 
 int main()
 {
-    Servidor server1("192.168.18.1", "Minecraft", 1, 5, 4, 25565, "Espana");
+    /*Servidor server1("192.168.18.1", "Minecraft", 1, 5, 4, 25565, "Espana");
 
     server1.mostrarInformacion();
 
@@ -103,7 +104,16 @@ int main()
     cout << endl;
     server1.activar();
 
-    server1.mostrarInformacion();
+    server1.mostrarInformacion();*/
+
+
+
+    GestorServidores gestor;
+
+    gestor.desplegarServidor("192.168.18.1", "Minecraft", 1, 5, 4, 25565, "Australia");
+    gestor.desplegarServidor("192.168.18.2", "Valorant", 2, 10, 8, 23436, "Espana");
+    cout << endl;
+    gestor.conectarServidor("192.168.18.2");
 
     return 0;
 }

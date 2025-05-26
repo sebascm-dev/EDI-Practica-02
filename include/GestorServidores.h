@@ -13,15 +13,15 @@ class GestorServidores {
     int numServidores;
 
 public:
-    GestorServidores();
-    ~GestorServidores();
-    int getNumServidores();
-    bool desplegarServidor(cadena dS, cadena nJ, int i, int mxL, int mxC, int p, cadena lG);
-    bool desconetarServidor(cadena dS);
-    bool conectarServidor(cadena dS);
-    bool realizarMantenimiento(cadena dS);
-    bool eliminarServidor(cadena dS);
-    bool alojarJugador(Jugador j, cadena nomJuego, cadena host, bool &enEspera);
+    GestorServidores(); // [OK]
+    ~GestorServidores(); // [OK]
+    int getNumServidores(); // [OK]
+    bool desplegarServidor(cadena dS, cadena nJ, int i, int mxL, int mxC, int p, cadena lG); // [OK]
+    bool desconectarServidor(cadena dS); // [OK]
+    bool conectarServidor(cadena dS); // [OK]
+    bool realizarMantenimiento(cadena dS); // [OK]
+    bool eliminarServidor(cadena dS); // [OK]
+    bool alojarJugador(Jugador j, cadena nomJuego, cadena host, bool &enEspera); // [OK]
     bool expulsarJugador(cadena nJ, cadena host);
     int getPosicionServidor(cadena dS);
     void mostrarInformacionServidores(int pos);
