@@ -22,13 +22,13 @@ public:
     bool realizarMantenimiento(cadena dS); // [OK]
     bool eliminarServidor(cadena dS); // [OK]
     bool alojarJugador(Jugador j, cadena nomJuego, cadena host, bool &enEspera); // [OK]
-    bool expulsarJugador(cadena nJ, cadena host);
-    int getPosicionServidor(cadena dS);
-    void mostrarInformacionServidores(int pos);
-    bool jugadorConectado(cadena nJ, cadena dS);
-    bool jugadorEnEspera(cadena nJ, cadena dS);
-    bool jugadorConectado(cadena nJ);
-    bool jugadorEnEspera(cadena nJ);
+    bool expulsarJugador(cadena nJ, cadena host); // [OK
+    int getPosicionServidor(cadena dS); // [OK
+    void mostrarInformacionServidores(int pos); // [OK
+    bool jugadorConectado(cadena nJ, cadena dS); // [OK
+    bool jugadorEnEspera(cadena nJ, cadena dS); // [OK
+    bool jugadorConectado(cadena nJ); // [OK
+    bool jugadorEnEspera(cadena nJ); // [OK
 };
 
 #endif // GESTORSERVIDORES_H

@@ -57,7 +57,7 @@ bool Servidor::conectarJugador(Jugador j) {
     cout << "[+] Posicion encontrada: " << pos << endl;
     jugadoresConectados.insertar(pos, j);
 
-    cout << "[+] Jugador " << j.nombreJugador << " introducido correctamente." << endl;
+    cout << "[+] Jugador " << j.nombreJugador << " conectado correctamente." << endl;
     return true;
 }
 
@@ -126,10 +126,8 @@ void Servidor::mostrarJugadoresEnEspera() {
 // Estado del servidor
 bool Servidor::estaActivo() {
     if(strcmp(estado, "ACTIVO") == 0) {
-        cout << "[/] SERVIDOR: " << estado << endl;
         return true;
     } else {
-        cout << "[/] SERVIDOR: " << estado << endl;
         return false;
     }
 }
@@ -197,9 +195,6 @@ void Servidor::mostrarInformacion() {
 }
 
 bool Servidor::expulsarJugador(cadena nombre) {
-    cout << endl << endl;
-
-
     int posConectado = 1;
     int sizeLista = jugadoresConectados.longitud();
     int sizeCola = jugadoresEnEspera.longitud();

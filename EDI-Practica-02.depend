@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1748104182 source:c:\users\spano\desktop\proyectos\edi-practica-02\main.cpp
+1748450433 source:c:\users\spano\desktop\proyectos\edi-practica-02\main.cpp
 	<iostream>
+	<cstring>
 	"Common.h"
 	"Servidor.h"
 	"GestorServidores.h"
@@ -14,7 +15,7 @@
 
 1747990994 c:\users\spano\desktop\proyectos\edi-practica-02\include\common.h
 
-1747990994 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\servidor.cpp
+1748448223 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\servidor.cpp
 	"Servidor.h"
 	"Common.h"
 
@@ -108,12 +109,12 @@
 	"TADCola.h"
 	"Servidor.h"
 
-1748105001 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\gestorservidores.cpp
+1748437224 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\gestorservidores.cpp
 	"GestorServidores.h"
 	"Servidor.h"
 	"Common.h"
 
-1748106626 c:\users\spano\desktop\proyectos\edi-practica-02\include\gestorservidores.h
+1748432257 c:\users\spano\desktop\proyectos\edi-practica-02\include\gestorservidores.h
 	<cstring>
 	"Common.h"
 	"TADLista.h"
