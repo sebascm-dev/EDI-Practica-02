@@ -109,12 +109,12 @@
 	"TADCola.h"
 	"Servidor.h"
 
-1748450671 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\gestorservidores.cpp
+1748794535 source:c:\users\spano\desktop\proyectos\edi-practica-02\src\gestorservidores.cpp
 	"GestorServidores.h"
 	"Servidor.h"
 	"Common.h"
 
-1748432257 c:\users\spano\desktop\proyectos\edi-practica-02\include\gestorservidores.h
+1748793698 c:\users\spano\desktop\proyectos\edi-practica-02\include\gestorservidores.h
 	<cstring>
 	"Common.h"
 	"TADLista.h"

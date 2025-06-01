@@ -623,3 +623,43 @@ bool GestorServidores::jugadorEnEspera(cadena nJ) {
 
     return false;
 }
+
+Servidor* GestorServidores::getServidorMasPuntuacion(cadena nombreJuego) {
+    Servidor *iter = primerServidor;
+    Servidor *mejorServidor = nullptr;
+    int mejorPuntuacion = -1;
+    cadena nombreJuegoIter;
+
+    cout << "[~] Buscando el servidor con mas puntuacion" << endl;
+
+    while(iter != nullptr) {
+        iter->getNombreJuego(nombreJuegoIter);
+        if(iter->estaActivo() && strcmp(nombreJuego, nombreJuegoIter) == 0) {
+            int jugadoresConectados = iter->getNumJugadoresConectados();
+            int suma = 0;
+
+            if(jugadoresConectados > 0) {
+                Jugador *lista = new Jugador[jugadoresConectados];
+                iter->exportarJugadoresConectados(lista);
+                for(int i = 0; i < jugadoresConectados; i++) {
+                    suma += lista[i].puntuacion;
+                }
+                delete[] lista;
+            }
+
+            if(suma > mejorPuntuacion) {
+                mejorPuntuacion = suma;
+                mejorServidor = iter;
+            }
+        }
+        iter = iter->getSiguienteServidor();
+    }
+
+    if (mejorServidor != nullptr) {
+        cout << "[OK] Servidor encontrado con puntuación total: "
+             << mejorPuntuacion << endl;
+    } else {
+        cout << "[!] No hay servidores activos para ese juego." << endl;
+    }
+    return mejorServidor;
+}

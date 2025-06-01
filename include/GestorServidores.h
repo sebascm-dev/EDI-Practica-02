@@ -29,6 +29,7 @@ public:
     bool jugadorEnEspera(cadena nJ, cadena dS); // [OK
     bool jugadorConectado(cadena nJ); // [OK
     bool jugadorEnEspera(cadena nJ); // [OK
+    Servidor* getServidorMasPuntuacion(cadena nombreJuego);
 };
 
 #endif // GESTORSERVIDORES_H

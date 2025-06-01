@@ -22,7 +22,8 @@ void menuPrincipal(GestorServidores &gestor) {
         cout << "6. Programar Mantenimiento de Servidor" << endl;
         cout << "7. Conectar Jugador" << endl;
         cout << "8. Expulsar Jugador" << endl;
-        cout << "9. Salir" << endl;
+        cout << "9. Sacar el Servidor con Max Puntuacion" << endl;
+        cout << "10. Salir" << endl;
         cout << endl;
         cout << "Seleccione una Opcion: "; cin >> opc; cin.ignore();
 
@@ -315,6 +316,31 @@ void menuPrincipal(GestorServidores &gestor) {
 
                 system("cls");
                 cout << endl;
+                cout << "=== CONECTAR UN NUEVO JUGADOR ===" << endl;
+                cout << endl;
+
+
+                cadena nombre;
+                cout << "Nombre del juego para sacar el servidor con mas puntuacion: ";
+                cin.getline(nombre, 50);
+                cout << endl;
+
+                // 2) Intentar expulsar
+                cout << "----- PROCESO DE BUSQUEDA -----" << endl;
+                gestor.getServidorMasPuntuacion(nombre);
+                cout << "------------------------------------" << endl;
+
+
+                cout << endl;
+                system("pause");
+                system("cls");
+                break;
+            }
+
+            case 10: {
+
+                system("cls");
+                cout << endl;
                 cout << "=== SALIENDO DEL PROGRAMAM ===" << endl;
                 break;
             }
@@ -326,7 +352,7 @@ void menuPrincipal(GestorServidores &gestor) {
             }
 
         }
-    } while (opc != 9);
+    } while (opc != 10);
 }
 
 int main()
